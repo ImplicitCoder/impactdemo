@@ -30,7 +30,7 @@
          "attributeColor":"#ffffff",
          "attributeFont":"sans",
          "attributeSize":"medium",
-	 "requiredResponse": "right",
+	 "requiredResponse": "right"
 },  {
          "iti":400,
          "target":"PEACE AND UNDERSTANDING",
