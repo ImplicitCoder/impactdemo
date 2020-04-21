@@ -87,6 +87,7 @@ body{
 
 #centered_stimulus{
 	display: flex;
+	flex-direction: column;
 	position: absolute;
 	width: 90%;
 	left: 5%;
@@ -97,9 +98,12 @@ body{
 	justify-content: center;
 }
 #box {
+	display: flex;
+	flex-direction: column;
 	width:auto;
 	border: solid;
 	border-color: white;
+	padding: 10px;
 }
 #underbox {
 	width:auto;
