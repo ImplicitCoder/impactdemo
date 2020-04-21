@@ -1,0 +1,156 @@
+body{
+	background-color: black;
+	color: white;
+	font-family: Tahoma, Geneva, sans-serif;
+	cursor: none;
+	margin: 0;
+}
+
+.progress{
+	width: 80%;
+	left: 10%;
+	height: 10px;
+}
+.progress-wrap{
+	background: #99c;
+	top: 20px;
+	overflow: hidden;
+	position: absolute;
+	width: 80%;
+	display: none; //hide at beginning of task flow
+}
+
+.progress-bar{
+	background: #ddd;
+	left: 10%;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+#demo_message{
+	position: absolute;
+}
+
+#labels {
+	top: 50px;
+	left: 10%;
+	width: 80%;
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#left_upper, #right_upper{
+	max-width: 40%;
+	overflow: hidden;
+	text-align: center;
+}
+
+.small{
+	font-size: 1em !important;
+}
+.medium{
+	font-size: 1.5em !important;
+}
+.large{
+	font-size: 3em !important;
+}
+.sans{
+	font-family: Tahoma, Geneva, sans-serif;
+}
+.mono{
+	font-family: "Courier New", Courier, monospace;
+}
+.serif{
+	font-family: "Times New Roman", Times, serif;
+}
+
+#left_upper p {
+	margin-top: 15px;
+}
+
+#left_upper p:first-child {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#right_upper p {
+	margin-top: 10px;
+}
+
+#right_upper p:first-child {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#centered_stimulus{
+	display: flex;
+	position: absolute;
+	width: 90%;
+	left: 5%;
+	top: 30%;
+	height: 40%;
+	font-size: 2em;
+	align-items: center;
+	justify-content: center;
+}
+
+#centered_wide_text{
+	position: absolute;
+	width: 80%;
+	color: white;
+	border: 1px solid;
+	padding: 15px 15px;
+	display: none;
+	align-items: center;
+	justify-content: center;
+}
+
+#centered_wide_text_container{
+	display: flex;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+#centered_small_text{
+	position: absolute;
+	width: 40%;
+	color: white;
+	border: 1px solid;
+	padding: 15px 15px;
+	display: none;
+	align-items: center;
+	justify-content: center;
+}
+
+#centered_small_text_container{
+	display: flex;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+#centered_text{
+	display: block;
+	width: 80%;
+	border: 1px solid;
+	text-align: center;
+}
+#feedback{
+	display: flex;
+	position: absolute;
+	top: 75%;
+	left: 30%;
+	width: 40%;
+	color: red;
+	font-size: 5em;
+	align-items: center;
+	justify-content: center;
+}

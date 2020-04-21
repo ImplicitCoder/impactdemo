@@ -1,0 +1,80 @@
+[{  "block":{
+      "leftUpperLabel":"NEGATIVE",
+      "leftUpperColor":"#ffffff",
+      "leftUpperSize":"medium",
+      "leftUpperFont":"sans",
+      "rightUpperLabel":"POSITIVE",
+      "rightUpperColor":"#ffffff",
+      "rightUpperSize":"medium",
+      "rightUpperFont":"sans",
+      "leftLowerLabel":"",
+      "leftLowerColor":"",
+      "leftLowerSize":"",
+      "leftLowerFont":"",
+      "rightLowerLabel":"",
+      "rightLowerColor":"",
+      "rightLowerSize":"",
+      "rightLowerFont":"",
+      "compatibility":"na"
+   
+},
+   "trials":[      {
+         "stimulus":"FREEDOM",
+         "type":"txt",
+         "cat":"ra",
+         "requiredResponse":"right",
+         "iti":400,
+         "color":"#ffffff",
+         "font":"sans",
+         "size":"medium",
+         "compatibility":"na"
+      
+},  {
+         "stimulus":"FREEDOM",
+         "type":"txt",
+         "cat":"ra",
+         "requiredResponse":"right",
+         "iti":400,
+         "color":"#ffffff",
+         "font":"sans",
+         "size":"medium",
+         "compatibility":"na"
+      
+}
+]
+},
+{  "block":{
+      "leftUpperLabel":"NEGATIVE",
+      "leftUpperColor":"#ffffff",
+      "leftUpperSize":"medium",
+      "leftUpperFont":"sans",
+      "rightUpperLabel":"POSITIVE",
+      "rightUpperColor":"#ffffff",
+      "rightUpperSize":"medium",
+      "rightUpperFont":"sans",
+      "leftLowerLabel":"",
+      "leftLowerColor":"",
+      "leftLowerSize":"",
+      "leftLowerFont":"",
+      "rightLowerLabel":"",
+      "rightLowerColor":"",
+      "rightLowerSize":"",
+      "rightLowerFont":"",
+      "compatibility":"na"
+   
+},
+   "trials":[      {
+         "stimulus":"FREEDOM",
+         "type":"txt",
+         "cat":"ra",
+         "requiredResponse":"right",
+         "iti":400,
+         "color":"#ffffff",
+         "font":"sans",
+         "size":"medium",
+         "compatibility":"na"
+      
+}]
+}
+
+]

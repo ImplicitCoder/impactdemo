@@ -1,0 +1,159 @@
+<link rel="stylesheet" href="static/impact.css" type="text/css" />
+
+
+  <!--import libraries here-->
+  <script src="jslibs/jquery-3.3.1.min.js"></script>
+  <script src="jslibs/platform.js"></script>
+
+  <!-- import global variables here -->
+  <script>
+    var csrfToken = "dummy";
+    var staticRoot = "dummy";
+    var respObj = {
+      "dummy": "dummy",
+    };
+    var taskObj = {
+  "id": 1,
+  "taskType": "iat",
+  "name": "greenwald_et_al_1998",
+  "is_blocked": false,
+  "iat_type": "fiveBlock",
+  "compatibility_order": "compFirst",
+  "credits_available": null,
+  "left_attr_label": "NEGATIVE",
+  "right_attr_label": "POSITIVE",
+  "left_conc_label": "INSECTS",
+  "right_conc_label": "FLOWERS",
+  "left_attr_label_color": "#ffffff",
+  "right_attr_label_color": "#ffffff",
+  "left_conc_label_color": "#ffffff",
+  "right_conc_label_color": "#ffffff",
+  "left_attr_label_size": "medium",
+  "right_attr_label_size": "medium",
+  "left_conc_label_size": "medium",
+  "right_conc_label_size": "medium",
+  "left_attr_label_font": "sans",
+  "right_attr_label_font": "sans",
+  "left_conc_label_font": "sans",
+  "right_conc_label_font": "sans",
+  "msg_wrong_key": "<p style=\"text-align: center;\">Invalid key pressed!</p>",
+  "msg_too_slow": "<p style=\"text-align: center;\"><span style=\"font-size: 14px;\">You have waited too long to respond.<br> Please try to respond as fast as possible without making too many mistakes.<br> If you make an error, please correct your initial response as fast as possible.<br> Press <span style=\"color: #ffff00;\"><strong>i</strong></span><strong> </strong>to continue.</span></p> ",
+  "msg_release_key": "<p style=\"text-align: center;\"><span style=\"font-size: 14px;\">Please release all keys to continue.</span></p>",
+  "outro_screen": "<p style=\"text-align: center;\"><span style=\"font-size: 24px;\">Great!</span></p> <p style=\"text-align: center;\"><span style=\"font-size: 14px;\">The interactive test is now finished.<br> Please, press the <span style=\"color: #ffff00;\"><strong>space bar</strong></span> to continue.</span></p> ",
+  "wrong_feedback": "X",
+  "intro_skip_button": 32,
+  "left_response_button": 69,
+  "right_response_button": 73,
+  "attr_type": "TXT",
+  "conc_type": "TXT",
+  "iti_min": 400,
+  "iti_max": 400,
+  "response_timeout": 3000,
+  "block_one_attr": 50,
+  "block_two_conc": 50,
+  "block_three_attr": 100,
+  "block_three_conc": 100,
+  "block_four_attr": 50,
+  "block_four_conc": 50,
+  "block_five_attr": 100,
+  "block_five_conc": 100,
+  "block_six_attr": 100,
+  "block_six_conc": 100,
+  "block_seven_attr": 100,
+  "block_seven_conc": 100,
+  "alternate_attr_conc": false,
+  "avoid_four_response_repetitions": false,
+  "left_attr_text_set": 4,
+  "left_attr_image_set": null,
+  "right_attr_text_set": 3,
+  "right_attr_image_set": null,
+  "left_comp_conc_text_set": 1,
+  "left_comp_conc_image_set": null,
+  "right_comp_conc_text_set": 2,
+  "right_comp_conc_image_set": null,
+  "left_attr_text_color": "#ffffff",
+  "right_attr_text_color": "#ffffff",
+  "left_comp_conc_text_color": "#ffffff",
+  "right_comp_conc_text_color": "#ffffff",
+  "left_attr_text_size": "medium",
+  "right_attr_text_size": "medium",
+  "left_comp_conc_text_size": "medium",
+  "right_comp_conc_text_size": "medium",
+  "left_attr_text_font": "sans",
+  "right_attr_text_font": "sans",
+  "left_comp_conc_text_font": "sans",
+  "right_comp_conc_text_font": "sans",
+  "blockScreens": {
+    "1": [
+      "\n<p style=\"text-align:center\">For an optimal task presentation, please press <span style=\"color:#ffff00\"><strong>F-11</strong></span> to enable Full Screen mode if you are using Windows.<br />\nOn Apple machines, please press the following key combination:&nbsp;<span style=\"color:#ffff00\"><strong>Control</strong></span> + <strong><span style=\"color:#ffff00\">Command</span> </strong>+ <span style=\"color:#ffff00\"><strong>F</strong></span>.</p>\n\n<p style=\"text-align:center\">Once you are finished, you can press the same key(s) again to disable Full Screen mode.</p>\n\n<p style=\"text-align:center\">Because you are expected to respond quickly, it is perfectly okay to make a mistake now and then.<br />\nWe know from experience that most participants can complete our study with a total error rate well below 20%.<br />\nNote, however, that statistical anlyses of your data will be impossible if your error rate is very high.<br />\nAccordingly, you will not be reimbursed if your error rate exceeds 37.5%.</p>\n\n<p style=\"text-align:center\">Please ensure that you participate under conditions that allow you to work in a concentrated manner.</p>\n\n<p style=\"text-align:center\">Press the <span style=\"color:#ffff00\"><strong>space bar</strong></span> to continue.</p>\n",
+      "\n<p style=\"text-align:center\"><span style=\"font-size:24px\"><strong>IMPACT DEMO</strong></span></p>\n\n<p style=\"text-align:center\">Press the <span style=\"color:#ffff00\"><strong>space bar</strong></span> to continue.</p>\n"
+    ],
+    "2": [
+      "\n<p style=\"text-align:center\"><span style=\"font-size:24px\"><strong>Great!</strong></span></p>\n\n<p style=\"text-align:center\">In the next phase, you will see another set of words.<br />\nSome words will refer to insects and some words will refer to flowers.<br />\nIt is your task to classify these words on the basis of their meaning by pressing one of two keys.</p>\n\n<p style=\"text-align:center\">For insects, please press the <span style=\"color:#ffff00\"><strong>E</strong></span> key with your left index finger.<br />\nFor flowers, please press the <span style=\"color:#ffff00\"><strong>I</strong></span> key with your right index finger.</p>\n\n<p style=\"text-align:center\">If you make an error, a red <strong><span style=\"color:#ff0000\">X</span></strong> will appear.<br />\nYou need to correct your response to proceed.</p>\n\n<p style=\"text-align:center\">Please try to respond as fast as possible without making too many mistakes.<br />\nPress the <span style=\"color:#ffff00\"><strong>space bar</strong></span> to continue.</p>\n"
+    ],
+    "3": [
+      "\n<p style=\"text-align:center\"><span style=\"font-size:24px\"><strong>Great!</strong></span></p>\n\n<p style=\"text-align:center\">The next phase is a bit more complicated.<br />\nAll the words just practiced will now appear in a random order.<br />\nAgain, it is your task to classify these words on the basis of their meaning.</p>\n\n<p style=\"text-align:center\">For negative words AND insects, please press the <span style=\"color:#ffff00\"><strong>E</strong></span> key with your left index finger.<br />\nFor positive words AND flowers, please press the <span style=\"color:#ffff00\"><strong>I</strong></span> key with your right index finger.</p>\n\n<p style=\"text-align:center\">If you make an error, a red <strong><span style=\"color:#ff0000\">X</span></strong> will appear.<br />\nYou need to correct your response to proceed.</p>\n\n<p style=\"text-align:center\">Please try to respond as fast as possible without making too many mistakes.<br />\nPress the <span style=\"color:#ffff00\"><strong>space bar</strong></span> to continue.</p>\n"
+    ],
+    "4": [
+      "\n<p style=\"text-align:center\"><span style=\"color:#ff0000\"><span style=\"font-size:24px\"><strong>Warning!</strong></span></span></p>\n\n<p style=\"text-align:center\">From this moment on, the response rule for the flowers and insects will be reversed!</p>\n\n<p style=\"text-align:center\">For <u>flowers</u>, please press the <span style=\"color:#ffff00\"><strong>E</strong></span> key with your left index finger.<br />\nFor <u>insects</u>, please press the <span style=\"color:#ffff00\"><strong>I</strong></span> key with your right index finger.</p>\n\n<p style=\"text-align:center\">If you make an error, a red <strong><span style=\"color:#ff0000\">X</span></strong> will appear.<br />\nYou need to correct your response to proceed.</p>\n\n<p style=\"text-align:center\">Please try to respond as fast as possible without making too many mistakes.<br />\nPress the <span style=\"color:#ffff00\"><strong>space bar</strong></span> to continue.</p>\n"
+    ],
+    "5": [
+      "\n<p style=\"text-align:center\"><span style=\"font-size:24px\"><strong>Great!</strong></span></p>\n\n<p style=\"text-align:center\">You are almost ready, just one more block of trials to go!<br />\nThe last block of trials is again a bit more complicated.</p>\n\n<p style=\"text-align:center\">For negative words AND flowers, please press the <span style=\"color:#ffff00\"><strong>E</strong></span> key with your left index finger.<br />\nFor positive words AND insects, please press the <span style=\"color:#ffff00\"><strong>I</strong></span> key with your right index finger.</p>\n\n<p style=\"text-align:center\">If you make an error, a red <strong><span style=\"color:#ff0000\">X</span></strong> will appear.<br />\nYou need to correct your response to proceed.</p>\n\n<p style=\"text-align:center\">Please try to respond as fast as possible without making too many mistakes.<br />\nPress the <span style=\"color:#ffff00\"><strong>space bar</strong></span> to continue.</p>\n"
+    ]
+  },
+  "exit_url": "/success"
+} 
+
+    // intros = taskObj.block_intro_texts;
+    // for (var i = 0; i< intros.length; i++) {
+      // intros[i] = intros[i].split("\\")
+    // }
+    // taskObj.block_intro_texts = intros;
+   </script>
+
+<div class="progress-wrap progress">
+
+  <div class="progress-bar progress"></div>
+</div>
+
+<div id="labels">
+  <div id="left_upper" >
+    <div id="left_upper_top"> </div>
+    <div id="left_upper_bottom"> </div>
+  </div>
+  <div id="right_upper">
+    <div id="right_upper_top"> </div>
+    <div id="right_upper_bottom"> </div>
+  </div>
+</div>
+
+<div id="centered_stimulus"></div>
+
+<div id="centered_wide_text_container">
+  <div id="centered_wide_text"></div>
+</div>
+
+<div id="centered_small_text_container">
+  <div id="centered_small_text"></div>
+</div>
+
+<div id="feedback">
+</div>
+
+<div id="preloadDiv" style="display: none"></div>
+
+
+
+<script src="static/expand_trials.js"></script>
+<script src="static/show_instructions.js"></script>
+<script src="static/preload_screens.js"></script>
+<script src="static/transfer_data.js"></script>
+<script src="static/task_data.js"></script>
+<script src="static/impact_module.js"></script>
+<script src="static/impact_display.js"></script>
+<script src="static/progress_bar.js"></script>
+<script src="static/respondent_settings.js"></script>
+<script src="static/submit_results.js"></script>
+<script src="static/preload_images.js"></script>
+<script src="static/impact.js"></script>
+
