@@ -19,27 +19,31 @@
    
 },
    "trials":[      {
-         "stimulus":"FREEDOM",
-         "type":"txt",
-         "cat":"ra",
-         "requiredResponse":"right",
          "iti":400,
-         "color":"#ffffff",
-         "font":"sans",
-         "size":"medium",
-         "compatibility":"na"
-      
+         "target":"FREEDOM",
+         "targetType":"txt",
+         "targetColor":"#ffffff",
+         "targetFont":"sans",
+         "targetSize":"medium",
+         "attribute":"good",
+         "attributeType":"txt",
+         "attributeColor":"#ffffff",
+         "attributeFont":"sans",
+         "attributeSize":"medium",
+	 "requiredResponse": "right",
 },  {
-         "stimulus":"FREEDOM",
-         "type":"txt",
-         "cat":"ra",
-         "requiredResponse":"right",
          "iti":400,
-         "color":"#ffffff",
-         "font":"sans",
-         "size":"medium",
-         "compatibility":"na"
-      
+         "target":"PEACE AND UNDERSTANDING",
+         "targetType":"txt",
+         "targetColor":"#ffffff",
+         "targetFont":"sans",
+         "targetSize":"medium",
+         "attribute":"sublime",
+         "attributeType":"txt",
+         "attributeColor":"#ffffff",
+         "attributeFont":"sans",
+         "attributeSize":"medium",
+	 "requiredResponse": "right"
 }
 ]
 },

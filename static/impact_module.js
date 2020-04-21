@@ -161,7 +161,7 @@ var IatModule = (function() {
         // Here starts the show
 
 
-        DisplayModule.ShowTrial(taskObj, trialData)
+        DisplayModule.ShowAttributeTarget(taskObj, trialData)
         console.log('trial shown')
             //.then(function(){
                 if (performance.now) {
@@ -292,7 +292,6 @@ var IatModule = (function() {
         var blockFinishedDeferred = $.Deferred();
 
         ProgressBar.SetProgress(0);
-        DisplayModule.ShowLabels(blockData.block);
 
         var continueBlock = function(){
             trialNumber = count + 1;

@@ -98,6 +98,11 @@ var DisplayModule = (function(){
         return true
     }
 
+    var showAttributeTarget = function(taskObj, trialData){
+        showAttribute(taskObj, trialData);
+        showTarget(taskObj, trialData);
+    };
+
     var showProbe = function(taskObj, trialData){
         console.log(taskObj)
         console.log(trialData)
@@ -113,6 +118,11 @@ var DisplayModule = (function(){
     var hideAttribute = function(){
         $(elements.attribute).removeClass();
         $(elements.attribute).empty().hide();
+    };
+
+    var hideAttributeTarget = function(){
+        hideAttribute();
+        hideTarget();
     };
 
     var hideProbe = function(){
@@ -148,10 +158,10 @@ var DisplayModule = (function(){
     };
 
     return {
-        ShowTrial: showTrial,
-        HideTrial: hideTrial,
-        ShowLabels: showLabels,
-        HideLabels: hideLabels,
+        ShowAttributeTarget: showAttributeTarget,
+        HideAttributeTarget: hideAttributeTarget,
+        ShowProbe: showProbe,
+        HideProbe: hideProbe,
         ShowWrongFeedback: showWrongFeedback,
         HideWrongFeedback: hideWrongFeedback,
         ShowSpinner: showSpinner,
