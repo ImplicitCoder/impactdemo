@@ -70,7 +70,8 @@ var DisplayModule = (function(){
 
     // display stimulus and return display datetime
     var showTarget = function(taskObj, trialData){
-
+        console.log(taskObj)
+        console.log(trialData)
             $(elements.target).empty();
         if (trialData.type === 'img'){
             $('<img />')
@@ -90,11 +91,34 @@ var DisplayModule = (function(){
         return true
     };
 
-    var hideTrial = function(){
+    var showAttribute = function(taskObj, trialData){
+        console.log(taskObj)
+        console.log(trialData)
+
+        return true
+    }
+
+    var showProbe = function(taskObj, trialData){
+        console.log(taskObj)
+        console.log(trialData)
+
+        return true
+    }
+
+    var hideTarget = function(){
         $(elements.target).removeClass();
         $(elements.target).empty().hide();
     };
 
+    var hideAttribute = function(){
+        $(elements.attribute).removeClass();
+        $(elements.attribute).empty().hide();
+    };
+
+    var hideProbe = function(){
+        $(elements.probe).removeClass();
+        $(elements.probe).empty().hide();
+    };
 
     var showFeedback = function(feedbackText){
         elements.centeredSmallText.html(feedbackText);

@@ -96,7 +96,33 @@ body{
 	align-items: center;
 	justify-content: center;
 }
+#box {
+	width:auto;
+	border: white;
+}
+#underbox {
+	width:auto;
+}
+#target{
+	display: flex;
+	border: white;
+	width: 100%;
+	text-align: center;
+	justify-content: center;
+}
+#attribute{
+	display: flex;
+	width: 100%;
+	text-align: center;
+	justify-content: center;
 
+}
+#probe{
+	display: flex;
+	width: 100%;
+	text-align: center;
+	justify-content: center;
+}
 #centered_wide_text{
 	position: absolute;
 	width: 80%;
