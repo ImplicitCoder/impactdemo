@@ -97,20 +97,12 @@ body{
 	justify-content: center;
 }
 #box {
-	display: flex;
-	position: absolute;
-	align-items: center;
-	justify-content: center;
-	width:auto;
-}
-#borderedbox {
-	display: flex;
-	position: absolute;
-	align-items: center;
-	justify-content: center;
 	width:auto;
 	border: solid;
 	border-color: white;
+}
+#underbox {
+	width:auto;
 }
 #target{
 	display: flex;
