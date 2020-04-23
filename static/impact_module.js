@@ -321,7 +321,6 @@ var IatModule = (function() {
 
         blockFinishedDeferred.then( function(){
             DisplayModule.HideTrial();
-            DisplayModule.HideLabels();
         });
 
         return blockFinishedDeferred.promise();

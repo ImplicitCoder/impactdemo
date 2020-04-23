@@ -31,51 +31,15 @@ var DisplayModule = (function(){
     // module variables
     var elements = DomElements.GetElements();
 
-    var showLabels = function(blockInfo){
-        $(elements.leftUpperTop).html('<p>' + blockInfo.leftUpperLabel + ' </p>')
-        $(elements.leftUpperTop).css('color', blockInfo.leftUpperColor);
-        $(elements.leftUpperTop).addClass(blockInfo.leftUpperSize);
-        $(elements.leftUpperTop).addClass(blockInfo.leftUpperFont);
-        $(elements.leftUpperTop).show();
-
-        $(elements.leftUpperBottom).html('<p>' + blockInfo.leftLowerLabel + ' </p>')
-        $(elements.leftUpperBottom).css('color', blockInfo.leftLowerColor);
-        $(elements.leftUpperBottom).addClass(blockInfo.leftLowerSize);
-        $(elements.leftUpperBottom).addClass(blockInfo.leftLowerFont);
-        $(elements.leftUpperBottom).show();
-
-        $(elements.rightUpperTop).html('<p>' + blockInfo.rightUpperLabel + ' </p>')
-        $(elements.rightUpperTop).css('color', blockInfo.rightUpperColor);
-        $(elements.rightUpperTop).addClass(blockInfo.rightUpperSize);
-        $(elements.rightUpperTop).addClass(blockInfo.rightUpperFont);
-        $(elements.rightUpperTop).show();
-
-        $(elements.rightUpperBottom).html('<p>' + blockInfo.rightLowerLabel + ' </p>')
-        $(elements.rightUpperBottom).css('color', blockInfo.rightLowerColor);
-        $(elements.rightUpperBottom).addClass(blockInfo.rightLowerSize);
-        $(elements.rightUpperBottom).addClass(blockInfo.rightLowerFont);
-        $(elements.rightUpperBottom).show();
-    }
-
-    var hideLabels = function(){
-        $(elements.leftUpperTop).hide();
-        $(elements.leftUpperBottom).hide();
-        $(elements.rightUpperTop).hide();
-        $(elements.rightUpperBottom).hide();
-        $(elements.leftUpperTop).removeClass();
-        $(elements.leftUpperBottom).removeClass();
-        $(elements.rightUpperTop).removeClass();
-        $(elements.rightUpperBottom).removeClass();
-    }
-
     // display stimulus and return display datetime
     var showTarget = function(taskObj, trialData){
         console.log(taskObj)
         console.log(trialData)
+        console.log($(elements.target))
             $(elements.target).empty();
         if (trialData.type === 'img'){
             $('<img />')
-                        .attr('src', "" + trialData.stimulus+ "")         // ADD IMAGE PROPERTIES.
+                        .attr('src', "" + trialData.target+ "")         // ADD IMAGE PROPERTIES.
                             //.attr('title', title)
                             //.attr('alt', alt)
                             .height('95%')
@@ -84,7 +48,7 @@ var DisplayModule = (function(){
             $(elements.target).css('color', trialData.color);
             $(elements.target).addClass(trialData.size);
             $(elements.target).addClass(trialData.font);
-            $(elements.target).append(trialData.stimulus);
+            $(elements.target).append(trialData.target);
         }
             $(elements.target).show();
 
@@ -92,8 +56,21 @@ var DisplayModule = (function(){
     };
 
     var showAttribute = function(taskObj, trialData){
-        console.log(taskObj)
-        console.log(trialData)
+            $(elements.attribute).empty();
+        if (trialData.type === 'img'){
+            $('<img />')
+                        .attr('src', "" + trialData.target+ "")         // ADD IMAGE PROPERTIES.
+                            //.attr('title', title)
+                            //.attr('alt', alt)
+                            .height('95%')
+                        .appendTo($(elements.attribute))
+        } else {
+            $(elements.attribute).css('color', trialData.color);
+            $(elements.attribute).addClass(trialData.size);
+            $(elements.attribute).addClass(trialData.font);
+            $(elements.attribute).append(trialData.attribute);
+        }
+            $(elements.attribute).show();
 
         return true
     }
@@ -130,6 +107,11 @@ var DisplayModule = (function(){
         $(elements.probe).empty().hide();
     };
 
+    var hideTrial = function(){
+        hideAttributeTarget();
+        hideProbe();
+    };
+
     var showFeedback = function(feedbackText){
         elements.centeredSmallText.html(feedbackText);
         $(elements.centeredSmallText).show();
@@ -162,6 +144,7 @@ var DisplayModule = (function(){
         HideAttributeTarget: hideAttributeTarget,
         ShowProbe: showProbe,
         HideProbe: hideProbe,
+        HideTrial: hideTrial,
         ShowWrongFeedback: showWrongFeedback,
         HideWrongFeedback: hideWrongFeedback,
         ShowSpinner: showSpinner,
