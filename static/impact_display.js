@@ -7,6 +7,7 @@ var DomElements = (function(){
     var elements = {
         target : document.getElementById("target"),
         attribute : document.getElementById("attribute"),
+        box: document.getElementById("box"),
         probe : document.getElementById("probe"),
         //rightUpperBottom : document.getElementById("right_upper_bottom"),
         //centered_stimulus : document.getElementById("centered_stimulus"),
@@ -78,11 +79,17 @@ var DisplayModule = (function(){
     var showAttributeTarget = function(taskObj, trialData){
         showAttribute(taskObj, trialData);
         showTarget(taskObj, trialData);
+        $(elements.box).show();
     };
 
     var showProbe = function(taskObj, trialData){
-        console.log(taskObj)
-        console.log(trialData)
+        console.log("showing probe")
+        console.log(trialData.probe)
+        $(elements.probe).css('color', trialData.probeColor);
+        $(elements.probe).addClass(trialData.probeSize);
+        $(elements.probe).addClass(trialData.probeFont);
+        $(elements.probe).append(trialData.probe);
+        $(elements.probe).show();
 
         return true
     }
@@ -100,6 +107,7 @@ var DisplayModule = (function(){
     var hideAttributeTarget = function(){
         hideAttribute();
         hideTarget();
+        $(elements.box).hide();
     };
 
     var hideProbe = function(){

@@ -162,6 +162,7 @@ var IatModule = (function() {
 
 
         DisplayModule.ShowAttributeTarget(taskObj, trialData)
+        DisplayModule.ShowProbe(taskObj, trialData)
         console.log('trial shown')
             //.then(function(){
                 if (performance.now) {
