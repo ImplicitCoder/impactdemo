@@ -100,10 +100,12 @@ body{
 #box {
 	display: flex;
 	flex-direction: column;
-	width:auto;
+	width: 50%;
+	height: 2em%;
 	border: solid;
 	border-color: white;
 	padding: 10px;
+	display: none;
 }
 #underbox {
 	width:auto;
@@ -114,12 +116,14 @@ body{
 	width: 100%;
 	text-align: center;
 	justify-content: center;
+	display: none;
 }
 #attribute{
 	display: flex;
 	width: 100%;
 	text-align: center;
 	justify-content: center;
+	display: none;
 
 }
 #probe{
@@ -127,6 +131,7 @@ body{
 	width: 100%;
 	text-align: center;
 	justify-content: center;
+	display: none;
 }
 #centered_wide_text{
 	position: absolute;

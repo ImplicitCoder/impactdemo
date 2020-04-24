@@ -7,6 +7,7 @@ var DomElements = (function(){
     var elements = {
         target : document.getElementById("target"),
         attribute : document.getElementById("attribute"),
+        box: document.getElementById("box"),
         probe : document.getElementById("probe"),
         //rightUpperBottom : document.getElementById("right_upper_bottom"),
         //centered_stimulus : document.getElementById("centered_stimulus"),
@@ -30,52 +31,22 @@ var DisplayModule = (function(){
     //
     // module variables
     var elements = DomElements.GetElements();
-
-    var showLabels = function(blockInfo){
-        $(elements.leftUpperTop).html('<p>' + blockInfo.leftUpperLabel + ' </p>')
-        $(elements.leftUpperTop).css('color', blockInfo.leftUpperColor);
-        $(elements.leftUpperTop).addClass(blockInfo.leftUpperSize);
-        $(elements.leftUpperTop).addClass(blockInfo.leftUpperFont);
-        $(elements.leftUpperTop).show();
-
-        $(elements.leftUpperBottom).html('<p>' + blockInfo.leftLowerLabel + ' </p>')
-        $(elements.leftUpperBottom).css('color', blockInfo.leftLowerColor);
-        $(elements.leftUpperBottom).addClass(blockInfo.leftLowerSize);
-        $(elements.leftUpperBottom).addClass(blockInfo.leftLowerFont);
-        $(elements.leftUpperBottom).show();
-
-        $(elements.rightUpperTop).html('<p>' + blockInfo.rightUpperLabel + ' </p>')
-        $(elements.rightUpperTop).css('color', blockInfo.rightUpperColor);
-        $(elements.rightUpperTop).addClass(blockInfo.rightUpperSize);
-        $(elements.rightUpperTop).addClass(blockInfo.rightUpperFont);
-        $(elements.rightUpperTop).show();
-
-        $(elements.rightUpperBottom).html('<p>' + blockInfo.rightLowerLabel + ' </p>')
-        $(elements.rightUpperBottom).css('color', blockInfo.rightLowerColor);
-        $(elements.rightUpperBottom).addClass(blockInfo.rightLowerSize);
-        $(elements.rightUpperBottom).addClass(blockInfo.rightLowerFont);
-        $(elements.rightUpperBottom).show();
-    }
-
-    var hideLabels = function(){
-        $(elements.leftUpperTop).hide();
-        $(elements.leftUpperBottom).hide();
-        $(elements.rightUpperTop).hide();
-        $(elements.rightUpperBottom).hide();
-        $(elements.leftUpperTop).removeClass();
-        $(elements.leftUpperBottom).removeClass();
-        $(elements.rightUpperTop).removeClass();
-        $(elements.rightUpperBottom).removeClass();
-    }
+    
+    $.wait = function(duration) {
+        return $.Deferred(function(def) {
+            setTimeout(def.resolve, duration);
+        });
+    };
 
     // display stimulus and return display datetime
     var showTarget = function(taskObj, trialData){
         console.log(taskObj)
         console.log(trialData)
+        console.log($(elements.target))
             $(elements.target).empty();
         if (trialData.type === 'img'){
             $('<img />')
-                        .attr('src', "" + trialData.stimulus+ "")         // ADD IMAGE PROPERTIES.
+                        .attr('src', "" + trialData.target+ "")         // ADD IMAGE PROPERTIES.
                             //.attr('title', title)
                             //.attr('alt', alt)
                             .height('95%')
@@ -84,7 +55,7 @@ var DisplayModule = (function(){
             $(elements.target).css('color', trialData.color);
             $(elements.target).addClass(trialData.size);
             $(elements.target).addClass(trialData.font);
-            $(elements.target).append(trialData.stimulus);
+            $(elements.target).append(trialData.target);
         }
             $(elements.target).show();
 
@@ -92,15 +63,39 @@ var DisplayModule = (function(){
     };
 
     var showAttribute = function(taskObj, trialData){
-        console.log(taskObj)
-        console.log(trialData)
+            $(elements.attribute).empty();
+        if (trialData.type === 'img'){
+            $('<img />')
+                        .attr('src', "" + trialData.target+ "")         // ADD IMAGE PROPERTIES.
+                            //.attr('title', title)
+                            //.attr('alt', alt)
+                            .height('95%')
+                        .appendTo($(elements.attribute))
+        } else {
+            $(elements.attribute).css('color', trialData.color);
+            $(elements.attribute).addClass(trialData.size);
+            $(elements.attribute).addClass(trialData.font);
+            $(elements.attribute).append(trialData.attribute);
+        }
+            $(elements.attribute).show();
 
         return true
     }
 
+    var showAttributeTarget = function(taskObj, trialData){
+        showAttribute(taskObj, trialData);
+        showTarget(taskObj, trialData);
+        $(elements.box).show();
+    };
+
     var showProbe = function(taskObj, trialData){
-        console.log(taskObj)
-        console.log(trialData)
+        console.log("showing probe")
+        console.log(trialData.probe)
+        $(elements.probe).css('color', trialData.probeColor);
+        $(elements.probe).addClass(trialData.probeSize);
+        $(elements.probe).addClass(trialData.probeFont);
+        $(elements.probe).empty().append(trialData.probe);
+        $(elements.probe).show();
 
         return true
     }
@@ -115,10 +110,45 @@ var DisplayModule = (function(){
         $(elements.attribute).empty().hide();
     };
 
+    var emptyTarget = function(){
+        $(elements.target).empty().append("<br>");
+    };
+
+    var emptyAttribute = function(){
+        $(elements.attribute).empty().append("<br>");
+    };
+    var hideAttributeTarget = function(){
+        hideAttribute();
+        hideTarget();
+        $(elements.box).hide();
+    };
+
+    var emptyAttributeTarget = function(){
+        emptyAttribute();
+        emptyTarget();
+    };
+
     var hideProbe = function(){
         $(elements.probe).removeClass();
-        $(elements.probe).empty().hide();
+        $(elements.probe).empty().append("<br>");
     };
+
+    var hideTrial = function(){
+        hideAttributeTarget();
+        hideProbe();
+    };
+
+    var showStimulus = function(taskObj, trialData){
+        var stimDeferred = $.Deferred();
+        console.log('start showing stim')
+        showAttributeTarget(taskObj, trialData)
+        $.wait(1000).then(function(){
+            emptyAttributeTarget();
+            showProbe(taskObj, trialData)
+            stimDeferred.resolve();
+        });
+        return stimDeferred.promise();
+    }
 
     var showFeedback = function(feedbackText){
         elements.centeredSmallText.html(feedbackText);
@@ -148,10 +178,12 @@ var DisplayModule = (function(){
     };
 
     return {
-        ShowTrial: showTrial,
+        ShowStimulus: showStimulus,
+        ShowAttributeTarget: showAttributeTarget,
+        HideAttributeTarget: hideAttributeTarget,
+        ShowProbe: showProbe,
+        HideProbe: hideProbe,
         HideTrial: hideTrial,
-        ShowLabels: showLabels,
-        HideLabels: hideLabels,
         ShowWrongFeedback: showWrongFeedback,
         HideWrongFeedback: hideWrongFeedback,
         ShowSpinner: showSpinner,

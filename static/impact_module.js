@@ -161,7 +161,6 @@ var IatModule = (function() {
         // Here starts the show
 
 
-        DisplayModule.ShowTrial(taskObj, trialData)
         console.log('trial shown')
             //.then(function(){
                 if (performance.now) {
@@ -292,11 +291,17 @@ var IatModule = (function() {
         var blockFinishedDeferred = $.Deferred();
 
         ProgressBar.SetProgress(0);
-        DisplayModule.ShowLabels(blockData.block);
 
         var continueBlock = function(){
             trialNumber = count + 1;
-            trialFinishedDeferred =  runTrial(taskObj, trials[count], trialNumber, blockNr);
+            trialFinishedDeferred = function(){
+                //function(taskObj, trials[count], trialNumber, blockNr){
+                    return DisplayModule.ShowStimulus(taskObj, trials[count]).then(
+                            function(){
+                            console.log('returning runtrial')
+                            return runTrial(taskObj, trials[count], trialNumber, blockNr);
+                        })
+                }();
 
             trialFinishedDeferred.then( function(trialResults){
                 console.log('contimue with next trial')
@@ -322,7 +327,6 @@ var IatModule = (function() {
 
         blockFinishedDeferred.then( function(){
             DisplayModule.HideTrial();
-            DisplayModule.HideLabels();
         });
 
         return blockFinishedDeferred.promise();
