@@ -100,7 +100,8 @@ body{
 #box {
 	display: flex;
 	flex-direction: column;
-	width:auto;
+	width: 50%;
+	height: 2em%;
 	border: solid;
 	border-color: white;
 	padding: 10px;

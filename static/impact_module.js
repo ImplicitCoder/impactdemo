@@ -161,8 +161,6 @@ var IatModule = (function() {
         // Here starts the show
 
 
-        DisplayModule.ShowAttributeTarget(taskObj, trialData)
-        DisplayModule.ShowProbe(taskObj, trialData)
         console.log('trial shown')
             //.then(function(){
                 if (performance.now) {
@@ -296,7 +294,14 @@ var IatModule = (function() {
 
         var continueBlock = function(){
             trialNumber = count + 1;
-            trialFinishedDeferred =  runTrial(taskObj, trials[count], trialNumber, blockNr);
+            trialFinishedDeferred = function(){
+                //function(taskObj, trials[count], trialNumber, blockNr){
+                    return DisplayModule.ShowStimulus(taskObj, trials[count]).then(
+                            function(){
+                            console.log('returning runtrial')
+                            return runTrial(taskObj, trials[count], trialNumber, blockNr);
+                        })
+                }();
 
             trialFinishedDeferred.then( function(trialResults){
                 console.log('contimue with next trial')

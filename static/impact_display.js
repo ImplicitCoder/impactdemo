@@ -31,6 +31,12 @@ var DisplayModule = (function(){
     //
     // module variables
     var elements = DomElements.GetElements();
+    
+    $.wait = function(duration) {
+        return $.Deferred(function(def) {
+            setTimeout(def.resolve, duration);
+        });
+    };
 
     // display stimulus and return display datetime
     var showTarget = function(taskObj, trialData){
@@ -88,7 +94,7 @@ var DisplayModule = (function(){
         $(elements.probe).css('color', trialData.probeColor);
         $(elements.probe).addClass(trialData.probeSize);
         $(elements.probe).addClass(trialData.probeFont);
-        $(elements.probe).append(trialData.probe);
+        $(elements.probe).empty().append(trialData.probe);
         $(elements.probe).show();
 
         return true
@@ -104,21 +110,45 @@ var DisplayModule = (function(){
         $(elements.attribute).empty().hide();
     };
 
+    var emptyTarget = function(){
+        $(elements.target).empty().append("<br>");
+    };
+
+    var emptyAttribute = function(){
+        $(elements.attribute).empty().append("<br>");
+    };
     var hideAttributeTarget = function(){
         hideAttribute();
         hideTarget();
         $(elements.box).hide();
     };
 
+    var emptyAttributeTarget = function(){
+        emptyAttribute();
+        emptyTarget();
+    };
+
     var hideProbe = function(){
         $(elements.probe).removeClass();
-        $(elements.probe).empty().hide();
+        $(elements.probe).empty().append("<br>");
     };
 
     var hideTrial = function(){
         hideAttributeTarget();
         hideProbe();
     };
+
+    var showStimulus = function(taskObj, trialData){
+        var stimDeferred = $.Deferred();
+        console.log('start showing stim')
+        showAttributeTarget(taskObj, trialData)
+        $.wait(1000).then(function(){
+            emptyAttributeTarget();
+            showProbe(taskObj, trialData)
+            stimDeferred.resolve();
+        });
+        return stimDeferred.promise();
+    }
 
     var showFeedback = function(feedbackText){
         elements.centeredSmallText.html(feedbackText);
@@ -148,6 +178,7 @@ var DisplayModule = (function(){
     };
 
     return {
+        ShowStimulus: showStimulus,
         ShowAttributeTarget: showAttributeTarget,
         HideAttributeTarget: hideAttributeTarget,
         ShowProbe: showProbe,
