@@ -57,7 +57,7 @@ var DisplayModule = (function(){
             $(elements.target).addClass(trialData.font);
             $(elements.target).append(trialData.target);
         }
-            $(elements.target).show();
+            $(elements.target).css("display","flex");
 
         return true
     };
@@ -77,7 +77,7 @@ var DisplayModule = (function(){
             $(elements.attribute).addClass(trialData.font);
             $(elements.attribute).append(trialData.attribute);
         }
-            $(elements.attribute).show();
+            $(elements.attribute).css("display","flex");
 
         return true
     }
@@ -85,7 +85,7 @@ var DisplayModule = (function(){
     var showAttributeTarget = function(taskObj, trialData){
         showAttribute(taskObj, trialData);
         showTarget(taskObj, trialData);
-        $(elements.box).show();
+        $(elements.box).css("display", "flex");
     };
 
     var showProbe = function(taskObj, trialData){
