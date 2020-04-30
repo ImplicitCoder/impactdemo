@@ -21,7 +21,8 @@
          "probeColor":"#ffffff",
          "probeFont":"sans",
          "probeSize":"medium",
-         "requiredResponse": "right"
+         "requiredResponse": "right",
+         "isMeasurement":"false"
 },  {
          "iti":400,
          "target":"PEACE AND UNDERSTANDING",
@@ -42,7 +43,8 @@
          "probeColor":"#ffffff",
          "probeFont":"sans",
          "probeSize":"medium",
-         "requiredResponse": "right"
+         "requiredResponse": "",
+         "isMeasurement":"true"
 }
 ]
 },
