@@ -142,11 +142,15 @@ var DisplayModule = (function(){
         var stimDeferred = $.Deferred();
         console.log('start showing stim')
         showAttributeTarget(taskObj, trialData)
-        $.wait(1000).then(function(){
+        $.wait(trialData.targetAttrDuration)
+        .then(function(){
             emptyAttributeTarget();
-            showProbe(taskObj, trialData)
-            stimDeferred.resolve();
-        });
+            $.wait(trialData.probeDelay)
+            .then(function(){
+                showProbe(taskObj, trialData)
+                stimDeferred.resolve();
+            });
+        })
         return stimDeferred.promise();
     }
 
