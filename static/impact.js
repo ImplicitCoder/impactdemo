@@ -119,7 +119,7 @@ var BlockSequence = function(){
 
             .then(
                function(){
-                return  IatModule.RunBlock(taskObject, blockData, blockNumber);
+                return  ImpactModule.RunBlock(taskObject, blockData, blockNumber);
                }, logError)
 
             //.then(

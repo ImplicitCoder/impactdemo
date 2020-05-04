@@ -2,7 +2,7 @@
 // Input: Trial array
 // Output: Results array, gamification scores
 
-var IatModule = (function() {
+var ImpactModule = (function() {
     // internal state variables declared here (new code)
 
     var keysDown = {};
