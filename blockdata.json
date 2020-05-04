@@ -13,15 +13,16 @@
          "attributeColor":"#ffffff",
          "attributeFont":"sans",
          "attributeSize":"medium",
-	 "targetAttrStart":500,
-	 "targetAttrDuration":2000,
-	 "probeDelay":250,
-	 "probe":"YES",
+         "targetAttrStart":500,
+         "targetAttrDuration":2000,
+         "probeDelay":250,
+         "probe":"YES",
          "probeType":"txt",
          "probeColor":"#ffffff",
          "probeFont":"sans",
          "probeSize":"medium",
-	 "requiredResponse": "right"
+         "requiredResponse": "right",
+         "isMeasurement":"false"
 },  {
          "iti":400,
          "target":"PEACE AND UNDERSTANDING",
@@ -34,15 +35,16 @@
          "attributeColor":"#ffffff",
          "attributeFont":"sans",
          "attributeSize":"medium",
-	 "targetAttrStart":500,
-	 "targetAttrDuration":2000,
-	 "probeDelay":250,
-	 "probe":"???",
+         "targetAttrStart":500,
+         "targetAttrDuration":2000,
+         "probeDelay":250,
+         "probe":"???",
          "probeType":"txt",
          "probeColor":"#ffffff",
          "probeFont":"sans",
          "probeSize":"medium",
-	 "requiredResponse": "right"
+         "requiredResponse": "",
+         "isMeasurement":"true"
 }
 ]
 },
@@ -61,15 +63,15 @@
          "attributeColor":"#ffffff",
          "attributeFont":"sans",
          "attributeSize":"medium",
-	 "targetAttrStart":500,
-	 "targetAttrDuration":2000,
-	 "probeDelay":250,
-	 "probe":"???",
+         "targetAttrStart":500,
+         "targetAttrDuration":2000,
+         "probeDelay":250,
+         "probe":"???",
          "probeType":"txt",
          "probeColor":"#ffffff",
          "probeFont":"sans",
          "probeSize":"medium",
-	 "requiredResponse": "right"
+         "requiredResponse": "right"
 },  {
          "iti":400,
          "target":"THRUST AND CONSOLATION",
@@ -82,15 +84,15 @@
          "attributeColor":"#ffffff",
          "attributeFont":"sans",
          "attributeSize":"medium",
-	 "targetAttrStart":500,
-	 "targetAttrDuration":2000,
-	 "probeDelay":250,
-	 "probe":"NO",
+         "targetAttrStart":500,
+         "targetAttrDuration":2000,
+         "probeDelay":250,
+         "probe":"NO",
          "probeType":"txt",
          "probeColor":"#ffffff",
          "probeFont":"sans",
          "probeSize":"medium",
-	 "requiredResponse": "right"
+         "requiredResponse": "right"
 }
 ]
 }
