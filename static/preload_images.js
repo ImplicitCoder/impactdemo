@@ -25,8 +25,8 @@ var PreloadImages = (function(){
 
         for (block in blockData){
             for (var trial in blockData[block].trials){
-                if (blockData[block].trials[trial]['type'] === 'img'){
-                    outarray.push(blockData[block].trials[trial]['stimulus'])   //TODO remove duplicates
+                if (blockData[block].trials[trial]['targetType'] === 'img'){
+                    outarray.push(blockData[block].trials[trial]['target'])   //TODO remove duplicates
                 }
             }
           }
@@ -36,6 +36,7 @@ var PreloadImages = (function(){
 
     var preload = function(blockData){
         imgArray = blockSetToImgArray(blockData);
+        console.log("preloading ", imgArray)
 
         for (var i = 0; i < imgArray.length; i++) {
             execLoad(imgArray[i], promises[i] = $.Deferred());

@@ -3,8 +3,8 @@
 },
    "trials":[      {
          "iti":400,
-         "target":"FREEDOM",
-         "targetType":"txt",
+         "target":"img/img1.png",
+         "targetType":"img",
          "targetColor":"#ffffff",
          "targetFont":"sans",
          "targetSize":"medium",
