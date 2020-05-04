@@ -21,7 +21,7 @@
          "probeColor":"#ffffff",
          "probeFont":"sans",
          "probeSize":"medium",
-         "requiredResponse": "right",
+         "requiredResponse": "left",
          "isMeasurement":"false"
 },  {
          "iti":400,
@@ -71,7 +71,8 @@
          "probeColor":"#ffffff",
          "probeFont":"sans",
          "probeSize":"medium",
-         "requiredResponse": "right"
+         "requiredResponse": "",
+         "isMeasurement":"true"
 },  {
          "iti":400,
          "target":"THRUST AND CONSOLATION",
@@ -92,7 +93,8 @@
          "probeColor":"#ffffff",
          "probeFont":"sans",
          "probeSize":"medium",
-         "requiredResponse": "left"
+         "requiredResponse": "right",
+         "isMeasurement":"false"
 }
 ]
 }
