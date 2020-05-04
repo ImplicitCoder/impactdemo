@@ -92,7 +92,7 @@
          "probeColor":"#ffffff",
          "probeFont":"sans",
          "probeSize":"medium",
-         "requiredResponse": "right"
+         "requiredResponse": "left"
 }
 ]
 }

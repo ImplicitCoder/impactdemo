@@ -75,8 +75,7 @@ var BlockSequence = function(){
     var run = function(taskObject, blockData, blockNumber){
         var sequenceDone = $.Deferred();
         var data = {};
-//TODO fix this
-       // respObj.userSettings = RespondentSettings.GetSettings();
+        respObj.userSettings = RespondentSettings.GetSettings();
 
         DisplayModule.ShowSpinner();
 
@@ -123,23 +122,23 @@ var BlockSequence = function(){
                 return  IatModule.RunBlock(taskObject, blockData, blockNumber);
                }, logError)
 
-            .then(
-                    function(blockResults){
-                        DisplayModule.ShowSpinner();
-                        console.log(blockResults)
-                        console.log(DataProcessing.ToMatrix(blockResults, taskObj).join("\n"));
-                        return SubmitResults.Submit(blockResults, blockNumber, respObj, taskObj);
-                    })
-            .then(
-                    function(result){
-                        DisplayModule.HideSpinner();
-                        if(result.status == 1){
-                            console.log('data succesfully returned to server');
-                        } else {
-                            console.log('no data returned to server');
-                            console.log(result.message);
-                        }
-                    }, logError)
+            //.then(
+                    //function(blockResults){
+                        //DisplayModule.ShowSpinner();
+                        //console.log(blockResults)
+                        //console.log(DataProcessing.ToMatrix(blockResults, taskObj).join("\n"));
+                        //return SubmitResults.Submit(blockResults, blockNumber, respObj, taskObj);
+                    //})
+            //.then(
+                    //function(result){
+                        //DisplayModule.HideSpinner();
+                        //if(result.status == 1){
+                            //console.log('data succesfully returned to server');
+                        //} else {
+                            //console.log('no data returned to server');
+                            //console.log(result.message);
+                        //}
+                    //}, logError)
 
             .then(
                     function(){
