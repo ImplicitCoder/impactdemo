@@ -44,7 +44,7 @@ var DisplayModule = (function(){
         console.log(trialData)
         console.log($(elements.target))
             $(elements.target).empty();
-        if (trialData.type === 'img'){
+        if (trialData.targetType === 'img'){
             $('<img />')
                         .attr('src', "" + trialData.target+ "")         // ADD IMAGE PROPERTIES.
                             //.attr('title', title)

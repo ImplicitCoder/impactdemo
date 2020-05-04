@@ -190,7 +190,7 @@ window.onload =  function(){
             console.log(resp)
             blocksArray = resp
             console.log('starting preload');
-            PreloadImages.Preload(blocksArray);
+            return PreloadImages.Preload(blocksArray);
         })
 
     // store trial data and show task level instructions
