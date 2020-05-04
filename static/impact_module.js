@@ -40,6 +40,7 @@ var IatModule = (function() {
         var allClear;
         var keyTime;
         var keyCount = 0;
+        var measuredKey = 0;
         var firstReactTime;
         var lastReactTime;
         var displayTime;
@@ -88,6 +89,17 @@ var IatModule = (function() {
 
             // log error and responses
             trialResults.firstError = firstError;
+
+            if (trialData.isMeasurement === "true" ){
+                if ( measuredKey === taskObj.left_response_button ){
+                    trialResults.measuredKey = "left";
+                } else {
+                    trialResults.measuredKey = "right";
+                }
+            console.log("measurement done: ", trialResults.measuredKey);
+            } else {
+                trialResults.measuredKey = "";
+            }
 
             if (firstReactTime){
                 if (trialResults.firstError === 1){
@@ -205,8 +217,16 @@ var IatModule = (function() {
                             firstReactTime = keyTime;
                         }
 
-                        if (key === wrongKey){responseValue=0;}
-                        else if (key === correctKey ){responseValue=1;}
+                        if (key === correctKey || trialData.isMeasurement === "true" ){
+                            console.log("okl");
+                            responseValue=1;
+                        } else if (key === wrongKey){responseValue=0;}
+
+                        if (trialData.isMeasurement === "true"){
+                            measuredKey = key
+                        } else {
+                            measuredKey = 0
+                        }
 
                         if (responseValue === 1){  /** Correct answer given **/
                             DisplayModule.HideWrongFeedback();  /** if corrected frow wrong answer **/
