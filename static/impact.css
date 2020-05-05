@@ -135,7 +135,7 @@ body{
 	display: flex;
 	flex-direction: column;
 	width: 50%;
-	height: 25%;
+	max-height: 25%;
 	display: none;
 	text-align: center;
 	justify-content: center;
