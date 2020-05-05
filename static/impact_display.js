@@ -95,7 +95,7 @@ var DisplayModule = (function(){
         $(elements.probe).addClass(trialData.probeSize);
         $(elements.probe).addClass(trialData.probeFont);
         $(elements.probe).empty().append(trialData.probe);
-        $(elements.probe).show();
+        $(elements.probe).css("display","flex");
 
         return true
     }
