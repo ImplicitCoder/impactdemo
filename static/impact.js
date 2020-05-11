@@ -33,18 +33,39 @@ var DataProcessing = (function(){
             "taskname",
             "respondentId",
             "blockNumber",
-            "compatibility",
+
+            //"compatibility",
             "trialNumber",
             "timestamp",
             "iti",
             "responseTimeout",
             "leftResponseButton",
             "rightResponseButton",
-            "stimulus",
-            "color",
-            "size",
-            "font",
-            "cat",
+            //"stimulus",
+            //"color",
+            //"size",
+            //"font",
+            //"cat",
+            "target",
+            "targetType",
+            "targetColor",
+            "targetFont",
+            "targetSize",
+            "attribute",
+            "attributeType",
+            "attributeColor",
+            "attributeFont",
+            "attributeSize",
+            "targetAttrStart",
+            "targetAttrDuration",
+            "probeDelay",
+            "probe",
+            "probeType",
+            "probeColor",
+            "probeFont",
+            "probeSize",
+            "requiredResponse",
+            "isMeasurement",
             "requiredResponse",
             "rt1",
             "rt2",
@@ -122,23 +143,23 @@ var BlockSequence = function(){
                 return  ImpactModule.RunBlock(taskObject, blockData, blockNumber);
                }, logError)
 
-            //.then(
-                    //function(blockResults){
-                        //DisplayModule.ShowSpinner();
-                        //console.log(blockResults)
-                        //console.log(DataProcessing.ToMatrix(blockResults, taskObj).join("\n"));
-                        //return SubmitResults.Submit(blockResults, blockNumber, respObj, taskObj);
-                    //})
-            //.then(
-                    //function(result){
-                        //DisplayModule.HideSpinner();
-                        //if(result.status == 1){
-                            //console.log('data succesfully returned to server');
-                        //} else {
-                            //console.log('no data returned to server');
-                            //console.log(result.message);
-                        //}
-                    //}, logError)
+            .then(
+                    function(blockResults){
+                        DisplayModule.ShowSpinner();
+                        console.log(blockResults)
+                        console.log(DataProcessing.ToMatrix(blockResults, taskObj).join("\n"));
+                        return SubmitResults.Submit(blockResults, blockNumber, respObj, taskObj);
+                    })
+            .then(
+                    function(result){
+                        DisplayModule.HideSpinner();
+                        if(result.status == 1){
+                            console.log('data succesfully returned to server');
+                        } else {
+                            console.log('no data returned to server');
+                            console.log(result.message);
+                        }
+                    }, logError)
 
             .then(
                     function(){
