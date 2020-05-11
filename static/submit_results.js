@@ -24,7 +24,7 @@ var SubmitResults = (function(){
             type : "POST",
             url : "submitResults",
             tryCount: 0,
-            retryLimit: 7,
+            retryLimit: 2,
             data : dataObj,
             success: function(data, textStatus, jqXHR){
                 if (parseInt(data.status) === 1){
